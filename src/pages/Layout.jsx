@@ -27,7 +27,7 @@ export default function Layout() {
       </div>
       <div className={styles.tallyCounterContainer}>
         {counters.map((id, index) => (
-          <TallyCounter index={id} key={index}/>
+          <TallyCounter index={id} key={id}/>
         ))}
       </div>
     </div>

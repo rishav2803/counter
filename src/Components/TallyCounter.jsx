@@ -15,7 +15,7 @@ export default function TallyCounter({index}) {
   const [value,setValue]=useState(0);
   const [name,setName]=useState("Tally Counter");
 
-  console.log(index);
+  console.log("The id is",index);
   const handleIncrement = () => {
     setValue(value + 1)
     dispatch(incrementCounter());

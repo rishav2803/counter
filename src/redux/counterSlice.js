@@ -31,7 +31,6 @@ export const slice = createSlice({
       state.counterNumber += 1;
     },
     removeCounter: (state, action) => {
-      console.log(action.payload);
       state.counters = state.counters.filter((id) => id != action.payload);
     },
   },
