@@ -1,0 +1,31 @@
+.buttonContainer {
+  width: max(456px, 95%);
+  margin-inline: auto;
+  text-align: center;
+  margin-top: 3rem;
+  color: #fbfdff;
+}
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.buttonContainer button {
+  margin-bottom: 1rem;
+  padding: 0.7em 30px;
+  width: 10%;
+  border: 2px solid #645fc6;
+  color: #fbfdff;
+  font-family: JetBrains mono;
+  background-color: #645fc6;
+  transition: transform 120ms linear;
+}
+.buttonContainer button:hover {
+  cursor: pointer;
+}
+.tallyCounterContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
