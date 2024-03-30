@@ -6,14 +6,16 @@ import {
   resetCounter,
   setCounterName,
   setInitialValue,
+  removeCounter,
 } from "../redux/counterSlice";
 import styles from "./TallyCounter.module.css";
 
-export default function TallyCounter() {
+export default function TallyCounter({index}) {
   const dispatch = useDispatch();
   const [value,setValue]=useState(0);
   const [name,setName]=useState("Tally Counter");
 
+  console.log(index);
   const handleIncrement = () => {
     setValue(value + 1)
     dispatch(incrementCounter());
@@ -51,7 +53,7 @@ export default function TallyCounter() {
     <div className={styles.container}>
       <div className={styles.header}>
         <h2>{name}</h2>
-        <button>X</button>
+        <button onClick={()=>{dispatch(removeCounter(index))}}>X</button>
       </div>
       <div className={styles.form_group}>
         <input type="number" className={styles.input} value={value} readOnly></input>

@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   count: 0,
   counterName: "Tally Counter",
+  counterNumber: 1,
   counters: [1],
 };
 
@@ -26,7 +27,12 @@ export const slice = createSlice({
       state.count = action.payload;
     },
     addCounter: (state, action) => {
-      state.counters = [...state.counters, 1];
+      state.counters = [...state.counters, state.counterNumber + 1];
+      state.counterNumber += 1;
+    },
+    removeCounter: (state, action) => {
+      console.log(action.payload);
+      state.counters = state.counters.filter((id) => id != action.payload);
     },
   },
 });
@@ -38,6 +44,7 @@ export const {
   setCounterName,
   setInitialValue,
   addCounter,
+  removeCounter,
 } = slice.actions;
 
 export const selectValue = (state) => state.counter.count;

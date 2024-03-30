@@ -10,13 +10,12 @@ import {auth} from "../firebase";
 export default function Layout() {
   const dispatch = useDispatch();
   const counters = useSelector(selectCounter);
-  const currentUser=useSelector(selectCurrentUser);
-  console.log(currentUser);
 
   const handleAddCounter = () => {
     dispatch(addCounter());
   };
 
+  console.log(counters)
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
@@ -27,8 +26,8 @@ export default function Layout() {
         </div>
       </div>
       <div className={styles.tallyCounterContainer}>
-        {counters.map((_, index) => (
-          <TallyCounter key={index}/>
+        {counters.map((id, index) => (
+          <TallyCounter index={id} key={index}/>
         ))}
       </div>
     </div>
